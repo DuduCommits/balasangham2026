@@ -20,7 +20,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate -mt-[68px] flex min-h-[100svh] flex-col overflow-hidden pb-10 pt-[68px] sm:pb-24 sm:pt-28"
+      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden pb-10 pt-24 sm:pb-24 sm:pt-32"
       style={{
         backgroundImage:
           "radial-gradient(115% 85% at 18% 4%, var(--sun) 0%, var(--festival) 46%, var(--festival-deep) 100%)",

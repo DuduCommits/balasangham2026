@@ -128,7 +128,7 @@ export function SiteNav() {
   return (
     <>
       <header
-        className={`sticky top-2 z-50 mx-3 mt-2 rounded-2xl border border-ink/[0.05] shadow-[0_8px_28px_-22px_var(--ink)] transition-all duration-300 sm:top-3 sm:mx-5 sm:mt-3 sm:rounded-3xl lg:mx-8 ${
+        className={`fixed left-3 right-3 top-2 z-50 rounded-2xl border border-ink/[0.05] shadow-[0_8px_28px_-22px_var(--ink)] transition-all duration-300 sm:left-5 sm:right-5 sm:top-3 sm:rounded-3xl lg:left-8 lg:right-8 ${
           solid || open ? "bg-[oklch(0.89_0.07_94/0.9)]" : "bg-[oklch(0.91_0.07_95/0.82)]"
         }`}
       >
