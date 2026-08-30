@@ -16,7 +16,6 @@ async function gotoHome(page: Page) {
   });
 }
 
-
 function calendarButton(page: Page) {
   return page.getByRole("button", { name: /കലണ്ടറിൽ ചേർക്കുക/ });
 }
