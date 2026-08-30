@@ -19,7 +19,7 @@ import {
 import { ShareBar } from "./share";
 
 const BTN =
-  "inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display text-base font-bold leading-[1.5] ring-poster transition duration-200 motion-safe:hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink sm:w-auto sm:min-w-[13rem]";
+  "inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display text-base font-bold leading-[1.5] ring-poster transition-transform duration-200 motion-safe:hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink sm:w-auto sm:min-w-[13rem] will-change-transform";
 
 export function EventActions() {
   const [canNativeShare, setCanNativeShare] = useState(false);
