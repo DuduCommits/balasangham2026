@@ -9,6 +9,7 @@ import { Details } from "@/components/event/details";
 import { Programs } from "@/components/event/programs";
 import { Peace } from "@/components/event/peace";
 import { Gallery } from "@/components/event/gallery";
+import { Game } from "@/components/event/game";
 import { Location } from "@/components/event/location";
 import { FinalCta, SiteFooter } from "@/components/event/closing";
 import { MobileCta } from "@/components/event/mobile-cta";
@@ -98,6 +99,7 @@ function Index() {
         <Peace />
         <Details />
         <Programs />
+        <Game />
         <Gallery />
         <Location />
         <FinalCta />

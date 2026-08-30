@@ -52,7 +52,7 @@
   --color-cream: var(--cream);
   --color-ink: var(--ink);
 
-  --font-display: "Baloo Chettan 2", "Noto Sans Malayalam", system-ui, sans-serif;
+  --font-display: "Anek Malayalam", "Noto Sans Malayalam", system-ui, sans-serif;
   --font-body: "Noto Sans Malayalam", "Plus Jakarta Sans", system-ui, sans-serif;
   --font-ui: "Plus Jakarta Sans", "Noto Sans Malayalam", system-ui, sans-serif;
 }

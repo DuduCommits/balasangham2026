@@ -7,6 +7,7 @@ const LINKS = [
   { href: "#aamukham", label: "ആമുഖം" },
   { href: "#sammelanam", label: "സമ്മേളനം" },
   { href: "#paripadikal", label: "പരിപാടികൾ" },
+  { href: "#game", label: "കളികൾ" },
   { href: "#ormakal", label: "ഓർമ്മകൾ" },
   { href: "#sthalam", label: "സ്ഥലം" },
 ];
