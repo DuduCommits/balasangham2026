@@ -68,7 +68,7 @@ export function Location() {
         <div className="relative min-h-[350px] w-full overflow-hidden rounded-[2rem] bg-cream ring-poster h-full">
           <iframe
             title="Event Location"
-            src="https://maps.google.com/maps?q=Kottayam%20Angadi,%20Kannur&hl=en&z=15&output=embed"
+            src="https://maps.google.com/maps?q=GHSS%20Kottayam-Malabar,%20Kerala&hl=en&z=15&output=embed"
             className="absolute inset-0 h-full w-full border-0"
             allowFullScreen
             loading="lazy"
