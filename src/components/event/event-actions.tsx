@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { CalendarPlus, CalendarDays, Download, MapPin, Navigation, Share2 } from "lucide-react";
+import { CalendarDays, CalendarPlus, Download, MapPin, Navigation, Share2 } from "lucide-react";
 import {
   EVENT_DATE_ML,
   EVENT_LOCATION,
@@ -82,11 +82,11 @@ export function EventActions() {
           type="button"
           onClick={() => setCalendarOpen(true)}
           aria-haspopup="dialog"
-          aria-label={`കലണ്ടറിൽ ചേർക്കുക — ${EVENT_TITLE}, 2026 സെപ്റ്റംബർ 6`}
+          aria-label={`Add to Calendar — ${EVENT_TITLE}, 2026 സെപ്റ്റംബർ 6`}
           className={`${BTN} bg-berry text-berry-foreground`}
         >
-          <CalendarPlus className="h-5 w-5 shrink-0" aria-hidden />
-          കലണ്ടറിൽ ചേർക്കുക
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="" className="h-5 w-5 shrink-0" aria-hidden />
+          Add to Calendar
         </button>
 
         <a
