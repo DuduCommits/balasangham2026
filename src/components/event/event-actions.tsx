@@ -19,7 +19,7 @@ import {
 import { ShareBar } from "./share";
 
 const BTN =
-  "inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display text-base font-bold leading-[1.5] ring-poster transition-transform duration-200 motion-safe:hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink sm:w-auto sm:min-w-[13rem] will-change-transform";
+  "inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display text-base font-bold leading-[1.5] ring-poster transition duration-200 motion-safe:hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink sm:w-auto sm:min-w-[13rem]";
 
 export function EventActions() {
   const [canNativeShare, setCanNativeShare] = useState(false);
@@ -85,7 +85,7 @@ export function EventActions() {
           aria-label={`Add to Calendar — ${EVENT_TITLE}, 2026 സെപ്റ്റംബർ 6`}
           className={`${BTN} bg-berry text-berry-foreground`}
         >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="" className="h-5 w-5 shrink-0" aria-hidden />
+          <CalendarPlus className="h-5 w-5 shrink-0" aria-hidden />
           Add to Calendar
         </button>
 
@@ -93,25 +93,24 @@ export function EventActions() {
           href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`വഴികാട്ടി — ${EVENT_LOCATION} ഗൂഗിൾ മാപ്പിൽ തുറക്കും (പുതിയ ടാബിൽ)`}
+          aria-label={`Directions — ${EVENT_LOCATION} (opens in Google Maps)`}
           className={`${BTN} bg-sky text-accent-foreground`}
         >
           <Navigation className="h-5 w-5 shrink-0" aria-hidden />
-          Navigate
+          Directions
         </a>
 
         <button
           type="button"
           onClick={handleShare}
           aria-expanded={canNativeShare ? undefined : showFallback}
-          aria-label={`പങ്കിടുക — ${EVENT_TITLE}`}
+          aria-label={`Share — ${EVENT_TITLE}`}
           className={`${BTN} bg-ink text-cream`}
         >
           <Share2 className="h-5 w-5 shrink-0" aria-hidden />
           Share
         </button>
       </div>
-
 
       {showFallback ? (
         <div className="mx-auto mt-4 w-full max-w-2xl rounded-[1.75rem] bg-ink/95 p-4 ring-poster">

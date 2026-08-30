@@ -13,14 +13,14 @@ import { Game } from "@/components/event/game";
 import { Location } from "@/components/event/location";
 import { FinalCta, SiteFooter } from "@/components/event/closing";
 import { MobileCta } from "@/components/event/mobile-cta";
-import { getRequestOrigin } from "@/lib/origin.functions";
+
 
 const TITLE = "ബാലസംഘം പിണറായി ഏരിയ സമ്മേളനം | 2026";
 const DESCRIPTION =
   "ബാലസംഘം പിണറായി ഏരിയ സമ്മേളനം — 2026 സെപ്റ്റംബർ 6, കോട്ടയം അങ്ങാടി, കണ്ണൂർ. എല്ലാവർക്കും ഹൃദയം നിറഞ്ഞ സ്വാഗതം.";
 
 export const Route = createFileRoute("/")({
-  loader: async () => ({ origin: await getRequestOrigin() }),
+  loader: async () => ({ origin: typeof window !== 'undefined' ? window.location.origin : "https://balasangham2026.github.io" }),
   head: ({ loaderData }) => {
     const origin = loaderData?.origin ?? "";
     const image = `${origin}/og-image.jpg`;

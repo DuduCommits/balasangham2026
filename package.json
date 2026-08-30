@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && node -e \"const fs=require('fs');const p='.vercel/output/config.json';if(!fs.existsSync(p)){fs.writeFileSync(p,JSON.stringify({version:3,routes:[{handle:'filesystem'},{src:'/(.*)',dest:'/__server'}]},null,2))}\" && mkdir -p dist",
+    "build": "vite build && cp .output/public/_shell.html .output/public/index.html && cp .output/public/_shell.html .output/public/404.html",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
