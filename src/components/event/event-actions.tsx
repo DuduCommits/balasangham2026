@@ -45,12 +45,12 @@ export function EventActions() {
     setCalendarOpen(false);
     try {
       downloadIcs();
-      flash("കലണ്ടർ ഫയൽ ഡൗൺലോഡ് ചെയ്തു");
+      flash("Calendar file downloaded");
     } catch {
       try {
         window.open(GOOGLE_CALENDAR_URL, "_blank", "noopener,noreferrer");
       } catch {
-        flash("കലണ്ടറിൽ ചേർക്കാൻ കഴിഞ്ഞില്ല");
+        flash("Could not add to calendar");
       }
     }
   };
@@ -63,11 +63,11 @@ export function EventActions() {
           text: EVENT_SHARE_TEXT,
           url: window.location.href,
         });
-        flash("പങ്കിട്ടതിന് നന്ദി!");
+        flash("Thanks for sharing!");
         return;
       } catch (err) {
         if (err instanceof DOMException && err.name === "AbortError") {
-          flash("പങ്കിടൽ റദ്ദാക്കി — എപ്പോൾ വേണമെങ്കിലും വീണ്ടും ശ്രമിക്കാം");
+          flash("Sharing cancelled");
           return;
         }
       }
@@ -82,7 +82,7 @@ export function EventActions() {
           type="button"
           onClick={() => setCalendarOpen(true)}
           aria-haspopup="dialog"
-          aria-label={`Add to Calendar — ${EVENT_TITLE}, 2026 സെപ്റ്റംബർ 6`}
+          aria-label={`Add to Calendar — ${EVENT_TITLE}`}
           className={`${BTN} bg-berry text-berry-foreground`}
         >
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="" className="h-5 w-5 shrink-0" aria-hidden />
@@ -93,7 +93,7 @@ export function EventActions() {
           href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`വഴികാട്ടി — ${EVENT_LOCATION} ഗൂഗിൾ മാപ്പിൽ തുറക്കും (പുതിയ ടാബിൽ)`}
+          aria-label={`Navigate — Open ${EVENT_LOCATION} in Google Maps (opens in a new tab)`}
           className={`${BTN} bg-sky text-accent-foreground`}
         >
           <Navigation className="h-5 w-5 shrink-0" aria-hidden />
@@ -104,7 +104,7 @@ export function EventActions() {
           type="button"
           onClick={handleShare}
           aria-expanded={canNativeShare ? undefined : shareOpen}
-          aria-label={`പങ്കിടുക — ${EVENT_TITLE}`}
+          aria-label={`Share — ${EVENT_TITLE}`}
           className={`${BTN} bg-ink text-cream`}
         >
           <Share2 className="h-5 w-5 shrink-0" aria-hidden />
@@ -140,10 +140,10 @@ export function EventActions() {
         <DialogContent className="max-w-sm rounded-[1.75rem] bg-cream text-ink ring-poster">
           <DialogHeader>
             <DialogTitle className="font-display text-xl font-bold leading-[1.5]">
-              പരിപാടിയുടെ വിശദാംശങ്ങൾ
+              Event Details
             </DialogTitle>
             <DialogDescription className="font-body text-sm leading-[1.7] text-ink/70">
-              കലണ്ടറിൽ ചേർക്കുന്നതിന് മുൻപ് ഒന്ന് പരിശോധിക്കൂ
+              Review before adding to your calendar
             </DialogDescription>
           </DialogHeader>
           <dl className="mt-2 space-y-3">
@@ -151,7 +151,7 @@ export function EventActions() {
               <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-berry" aria-hidden />
               <div>
                 <dt className="font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60">
-                  പരിപാടി
+                  Event
                 </dt>
                 <dd className="font-body text-base font-bold leading-[1.6]">{EVENT_TITLE}</dd>
               </div>
@@ -160,11 +160,11 @@ export function EventActions() {
               <CalendarPlus className="mt-1 h-5 w-5 shrink-0 text-berry" aria-hidden />
               <div>
                 <dt className="font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60">
-                  തീയതി
+                  Date
                 </dt>
                 <dd className="font-body text-base font-bold leading-[1.6]">
                   {EVENT_DATE_ML}{" "}
-                  <span className="font-ui text-sm font-normal text-ink/60">(എല്ലായിടത്തും)</span>
+                  <span className="font-ui text-sm font-normal text-ink/60">(All day)</span>
                 </dd>
               </div>
             </div>
@@ -172,7 +172,7 @@ export function EventActions() {
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-berry" aria-hidden />
               <div>
                 <dt className="font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60">
-                  സ്ഥലം
+                  Location
                 </dt>
                 <dd className="font-body text-base font-bold leading-[1.6]">{EVENT_LOCATION}</dd>
               </div>
@@ -184,7 +184,7 @@ export function EventActions() {
               onClick={() => setCalendarOpen(false)}
               className="inline-flex min-h-11 items-center justify-center rounded-2xl px-5 py-2.5 font-display text-sm font-bold text-ink ring-poster transition hover:bg-ink/5 focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
-              റദ്ദാക്കുക
+              Cancel
             </button>
             <button
               type="button"
@@ -192,7 +192,7 @@ export function EventActions() {
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-berry px-5 py-2.5 font-display text-sm font-bold text-berry-foreground transition motion-safe:hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
               <Download className="h-4 w-4 shrink-0" aria-hidden />
-              ഡൗൺലോഡ് ചെയ്യുക
+              Download File
             </button>
           </div>
         </DialogContent>

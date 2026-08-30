@@ -6,7 +6,7 @@ import { a as DialogOverlay$1, i as DialogDescription$1, n as DialogClose, o as 
 import { _ as Download, a as Share2, b as CalendarDays, c as Music, d as Link2, f as Instagram, g as Facebook, h as Flag, i as Sparkles, l as Menu, m as Gamepad2, n as Users, o as Palette, p as HeartHandshake, r as Twitter, s as Navigation, t as X, u as MapPin, v as Check, x as ArrowRight, y as CalendarPlus } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Ck_MCS2x.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BmepsKKF.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var balasangham_logo_default = "/assets/balasangham-logo-C7c6dP_h.webp";
@@ -1316,12 +1316,12 @@ function EventActions() {
 		setCalendarOpen(false);
 		try {
 			downloadIcs();
-			flash("കലണ്ടർ ഫയൽ ഡൗൺലോഡ് ചെയ്തു");
+			flash("Calendar file downloaded");
 		} catch {
 			try {
 				window.open(GOOGLE_CALENDAR_URL, "_blank", "noopener,noreferrer");
 			} catch {
-				flash("കലണ്ടറിൽ ചേർക്കാൻ കഴിഞ്ഞില്ല");
+				flash("Could not add to calendar");
 			}
 		}
 	};
@@ -1332,11 +1332,11 @@ function EventActions() {
 				text: EVENT_SHARE_TEXT,
 				url: window.location.href
 			});
-			flash("പങ്കിട്ടതിന് നന്ദി!");
+			flash("Thanks for sharing!");
 			return;
 		} catch (err) {
 			if (err instanceof DOMException && err.name === "AbortError") {
-				flash("പങ്കിടൽ റദ്ദാക്കി — എപ്പോൾ വേണമെങ്കിലും വീണ്ടും ശ്രമിക്കാം");
+				flash("Sharing cancelled");
 				return;
 			}
 		}
@@ -1352,7 +1352,7 @@ function EventActions() {
 						type: "button",
 						onClick: () => setCalendarOpen(true),
 						"aria-haspopup": "dialog",
-						"aria-label": `Add to Calendar — ${EVENT_TITLE}, 2026 സെപ്റ്റംബർ 6`,
+						"aria-label": `Add to Calendar — ${EVENT_TITLE}`,
 						className: `${BTN} bg-berry text-berry-foreground`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg",
@@ -1365,7 +1365,7 @@ function EventActions() {
 						href: MAPS_URL$1,
 						target: "_blank",
 						rel: "noopener noreferrer",
-						"aria-label": `വഴികാട്ടി — ${EVENT_LOCATION} ഗൂഗിൾ മാപ്പിൽ തുറക്കും (പുതിയ ടാബിൽ)`,
+						"aria-label": `Navigate — Open ${EVENT_LOCATION} in Google Maps (opens in a new tab)`,
 						className: `${BTN} bg-sky text-accent-foreground`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigation, {
 							className: "h-5 w-5 shrink-0",
@@ -1376,7 +1376,7 @@ function EventActions() {
 						type: "button",
 						onClick: handleShare,
 						"aria-expanded": canNativeShare ? void 0 : shareOpen,
-						"aria-label": `പങ്കിടുക — ${EVENT_TITLE}`,
+						"aria-label": `Share — ${EVENT_TITLE}`,
 						className: `${BTN} bg-ink text-cream`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Share2, {
 							className: "h-5 w-5 shrink-0",
@@ -1414,10 +1414,10 @@ function EventActions() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, {
 							className: "font-display text-xl font-bold leading-[1.5]",
-							children: "പരിപാടിയുടെ വിശദാംശങ്ങൾ"
+							children: "Event Details"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription, {
 							className: "font-body text-sm leading-[1.7] text-ink/70",
-							children: "കലണ്ടറിൽ ചേർക്കുന്നതിന് മുൻപ് ഒന്ന് പരിശോധിക്കൂ"
+							children: "Review before adding to your calendar"
 						})] }),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dl", {
 							className: "mt-2 space-y-3",
@@ -1429,7 +1429,7 @@ function EventActions() {
 										"aria-hidden": true
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60",
-										children: "പരിപാടി"
+										children: "Event"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
 										className: "font-body text-base font-bold leading-[1.6]",
 										children: EVENT_TITLE
@@ -1442,7 +1442,7 @@ function EventActions() {
 										"aria-hidden": true
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60",
-										children: "തീയതി"
+										children: "Date"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dd", {
 										className: "font-body text-base font-bold leading-[1.6]",
 										children: [
@@ -1450,7 +1450,7 @@ function EventActions() {
 											" ",
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 												className: "font-ui text-sm font-normal text-ink/60",
-												children: "(എല്ലായിടത്തും)"
+												children: "(All day)"
 											})
 										]
 									})] })]
@@ -1462,7 +1462,7 @@ function EventActions() {
 										"aria-hidden": true
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60",
-										children: "സ്ഥലം"
+										children: "Location"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
 										className: "font-body text-base font-bold leading-[1.6]",
 										children: EVENT_LOCATION
@@ -1476,7 +1476,7 @@ function EventActions() {
 								type: "button",
 								onClick: () => setCalendarOpen(false),
 								className: "inline-flex min-h-11 items-center justify-center rounded-2xl px-5 py-2.5 font-display text-sm font-bold text-ink ring-poster transition hover:bg-ink/5 focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink",
-								children: "റദ്ദാക്കുക"
+								children: "Cancel"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 								type: "button",
 								onClick: handleCalendarConfirm,
@@ -1484,7 +1484,7 @@ function EventActions() {
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Download, {
 									className: "h-4 w-4 shrink-0",
 									"aria-hidden": true
-								}), "ഡൗൺലോഡ് ചെയ്യുക"]
+								}), "Download File"]
 							})]
 						})
 					]
