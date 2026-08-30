@@ -97,7 +97,7 @@ export function EventActions() {
           className={`${BTN} bg-sky text-accent-foreground`}
         >
           <Navigation className="h-5 w-5 shrink-0" aria-hidden />
-          വഴികാട്ടി
+          Navigate
         </a>
 
         <button
@@ -108,20 +108,10 @@ export function EventActions() {
           className={`${BTN} bg-ink text-cream`}
         >
           <Share2 className="h-5 w-5 shrink-0" aria-hidden />
-          പങ്കിടുക
+          Share
         </button>
       </div>
 
-      <p className="mt-3 text-center font-ui text-xs text-ink/60">
-        <a
-          href={GOOGLE_CALENDAR_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-11 items-center px-2 underline decoration-berry/50 underline-offset-4 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-berry"
-        >
-          Google Calendar
-        </a>
-      </p>
 
       {showFallback ? (
         <div className="mx-auto mt-4 w-full max-w-2xl rounded-[1.75rem] bg-ink/95 p-4 ring-poster">
