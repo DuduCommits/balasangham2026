@@ -5,9 +5,9 @@ import { t as hero_children_default } from "./hero-children-ZVwAEVSs.mjs";
 import { n as require_jsx_runtime } from "../_libs/radix-ui__react-context+react.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CoS2npbf.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Dh5TDOL4.js
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-BaySpIQf.css";
+var styles_default = "/assets/styles-Cp6ni4bk.css";
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-4",
@@ -165,7 +165,7 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var getRequestOrigin = createServerFn({ method: "GET" }).handler(createSsrRpc("5654329e34be191256640c8957e4eaed33fcb574dfccb4b513f44c828b16863f"));
-var $$splitComponentImporter = () => import("./routes-BmepsKKF.mjs");
+var $$splitComponentImporter = () => import("./routes-B0MYw2HV.mjs");
 var TITLE = "ബാലസംഘം പിണറായി ഏരിയ സമ്മേളനം | 2026";
 var DESCRIPTION = "ബാലസംഘം പിണറായി ഏരിയ സമ്മേളനം — 2026 സെപ്റ്റംബർ 6, കോട്ടയം അങ്ങാടി, കണ്ണൂർ. എല്ലാവർക്കും ഹൃദയം നിറഞ്ഞ സ്വാഗതം.";
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({

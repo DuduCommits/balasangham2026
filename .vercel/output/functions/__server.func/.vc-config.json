@@ -1,7 +1,6 @@
 {
+  "runtime": "nodejs20.x",
   "handler": "index.mjs",
   "launcherType": "Nodejs",
-  "shouldAddHelpers": false,
-  "supportsResponseStreaming": true,
-  "runtime": "nodejs22.x"
+  "supportsWrapper": false
 }

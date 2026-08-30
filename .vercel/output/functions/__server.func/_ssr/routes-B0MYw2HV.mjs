@@ -6,7 +6,7 @@ import { a as DialogOverlay$1, i as DialogDescription$1, n as DialogClose, o as 
 import { _ as Download, a as Share2, b as CalendarDays, c as Music, d as Link2, f as Instagram, g as Facebook, h as Flag, i as Sparkles, l as Menu, m as Gamepad2, n as Users, o as Palette, p as HeartHandshake, r as Twitter, s as Navigation, t as X, u as MapPin, v as Check, x as ArrowRight, y as CalendarPlus } from "../_libs/lucide-react.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BmepsKKF.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-B0MYw2HV.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var balasangham_logo_default = "/assets/balasangham-logo-C7c6dP_h.webp";
@@ -1215,7 +1215,8 @@ function ShareBar() {
 			aria: "Share on WhatsApp (opens in a new tab)",
 			href: `https://wa.me/?text=${encodedText}%20${encodedUrl}`,
 			icon: WhatsAppIcon,
-			color: "bg-[#25D366] text-white ring-[#25D366]/30"
+			color: "bg-[#25D366] text-white",
+			malayalam: false
 		},
 		{
 			key: "fb",
@@ -1223,7 +1224,8 @@ function ShareBar() {
 			aria: "Share on Facebook (opens in a new tab)",
 			href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
 			icon: Facebook,
-			color: "bg-[#1877F2] text-white ring-[#1877F2]/30"
+			color: "bg-[#1877F2] text-white",
+			malayalam: false
 		},
 		{
 			key: "x",
@@ -1231,7 +1233,8 @@ function ShareBar() {
 			aria: "Share on X (opens in a new tab)",
 			href: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
 			icon: Twitter,
-			color: "bg-[#0f1419] text-white ring-black/20"
+			color: "bg-[#0f1419] text-white",
+			malayalam: false
 		}
 	];
 	const handleCopy = async () => {
@@ -1247,49 +1250,75 @@ function ShareBar() {
 			window.setTimeout(() => setCopyFailed(false), 2400);
 		}
 	};
-	const btnBase = "flex h-14 w-full min-w-0 items-center justify-start gap-3 rounded-2xl px-4 ring-1 transition duration-200 motion-safe:hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink";
+	const btnBase = "flex h-12 w-full min-w-0 items-center justify-center gap-2 rounded-2xl px-3 shadow-md transition duration-200 motion-safe:hover:-translate-y-0.5 hover:brightness-110 active:scale-[0.97] active:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun";
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "mt-2 flex flex-col gap-2.5",
+		className: "mt-8",
 		children: [
-			links.map((item) => {
-				const Icon = item.icon;
-				return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: item.href,
-					target: "_blank",
-					rel: "noopener noreferrer",
-					"aria-label": item.aria,
-					className: `${btnBase} ${item.color}`,
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
-						className: "h-5 w-5 shrink-0",
-						"aria-hidden": "true"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "truncate font-ui text-sm font-semibold leading-[1.6]",
-						children: item.label
-					})]
-				}, item.key);
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+				className: "mb-3 text-center font-ui text-xs font-semibold uppercase tracking-[0.18em] text-cream/60",
+				children: "Share with friends"
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-				type: "button",
-				onClick: handleCopy,
-				"aria-label": copied ? "Link copied" : "Copy link",
-				className: `${btnBase} bg-cream text-ink ring-ink/10`,
-				children: [copied ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, {
-					className: "h-5 w-5 shrink-0 text-leaf",
-					"aria-hidden": "true"
-				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link2, {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+				className: "mx-auto grid w-full max-w-md grid-cols-2 gap-2.5 sm:max-w-2xl sm:grid-cols-4 sm:gap-3",
+				children: [links.map((item) => {
+					const Icon = item.icon;
+					return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
+						className: "min-w-0",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: item.href,
+							target: "_blank",
+							rel: "noopener noreferrer",
+							"aria-label": item.aria,
+							className: `${btnBase} ${item.color}`,
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
+								className: "h-5 w-5 shrink-0",
+								"aria-hidden": "true"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: `truncate text-sm font-semibold leading-[1.6] ${item.malayalam ? "font-body" : "font-ui"}`,
+								children: item.label
+							})]
+						})
+					}, item.key);
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
+					className: "min-w-0",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
+						onClick: handleCopy,
+						"aria-label": copied ? "Link copied" : "Copy link",
+						className: `${btnBase} bg-cream text-ink`,
+						children: [copied ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, {
+							className: "h-5 w-5 shrink-0",
+							"aria-hidden": "true"
+						}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link2, {
+							className: "h-5 w-5 shrink-0",
+							"aria-hidden": "true"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "truncate font-ui text-sm font-semibold leading-[1.6]",
+							children: copied ? "Copied" : "Link"
+						})]
+					})
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+				href: MAPS_URL$1,
+				target: "_blank",
+				rel: "noopener noreferrer",
+				"aria-label": "Share the Google Maps location (opens in a new tab)",
+				className: `${btnBase} mx-auto mt-2.5 flex w-full max-w-md gap-2 bg-sky-600 text-white sm:max-w-2xl`,
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, {
 					className: "h-5 w-5 shrink-0",
 					"aria-hidden": "true"
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 					className: "truncate font-ui text-sm font-semibold leading-[1.6]",
-					children: copied ? "Copied" : "Copy Link"
+					children: "Map"
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				role: "status",
 				"aria-live": "polite",
 				"aria-atomic": "true",
-				className: `mt-2 min-h-[1.25rem] text-center font-ui text-xs leading-[1.6] transition-opacity duration-200 ${copied || copyFailed ? "opacity-100" : "opacity-0"} ${copyFailed ? "text-destructive" : "text-ink/60"}`,
-				children: copied ? "Link copied to clipboard" : copyFailed ? "Couldn't copy — please copy manually" : ""
+				className: `mt-2.5 min-h-[1.25rem] text-center font-ui text-xs leading-[1.6] transition-opacity duration-200 ${copied || copyFailed ? "opacity-100" : "opacity-0"} ${copyFailed ? "text-[#ffb4a2]" : "text-cream/80"}`,
+				children: copied ? "Link copied — you can paste it anywhere" : copyFailed ? "Couldn't copy — please copy the link manually" : ""
 			})
 		]
 	});
@@ -1297,7 +1326,7 @@ function ShareBar() {
 var BTN = "inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display text-base font-bold leading-[1.5] ring-poster transition-transform duration-200 motion-safe:hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink sm:w-auto sm:min-w-[13rem] will-change-transform";
 function EventActions() {
 	const [canNativeShare, setCanNativeShare] = (0, import_react.useState)(false);
-	const [shareOpen, setShareOpen] = (0, import_react.useState)(false);
+	const [showFallback, setShowFallback] = (0, import_react.useState)(false);
 	const [calendarOpen, setCalendarOpen] = (0, import_react.useState)(false);
 	const [note, setNote] = (0, import_react.useState)("");
 	const noteTimer = (0, import_react.useRef)(null);
@@ -1316,12 +1345,12 @@ function EventActions() {
 		setCalendarOpen(false);
 		try {
 			downloadIcs();
-			flash("Calendar file downloaded");
+			flash("കലണ്ടർ ഫയൽ ഡൗൺലോഡ് ചെയ്തു");
 		} catch {
 			try {
 				window.open(GOOGLE_CALENDAR_URL, "_blank", "noopener,noreferrer");
 			} catch {
-				flash("Could not add to calendar");
+				flash("കലണ്ടറിൽ ചേർക്കാൻ കഴിഞ്ഞില്ല");
 			}
 		}
 	};
@@ -1332,15 +1361,15 @@ function EventActions() {
 				text: EVENT_SHARE_TEXT,
 				url: window.location.href
 			});
-			flash("Thanks for sharing!");
+			flash("പങ്കിട്ടതിന് നന്ദി!");
 			return;
 		} catch (err) {
 			if (err instanceof DOMException && err.name === "AbortError") {
-				flash("Sharing cancelled");
+				flash("പങ്കിടൽ റദ്ദാക്കി — എപ്പോൾ വേണമെങ്കിലും വീണ്ടും ശ്രമിക്കാം");
 				return;
 			}
 		}
-		setShareOpen(true);
+		setShowFallback((v) => !v);
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "mt-12",
@@ -1352,7 +1381,7 @@ function EventActions() {
 						type: "button",
 						onClick: () => setCalendarOpen(true),
 						"aria-haspopup": "dialog",
-						"aria-label": `Add to Calendar — ${EVENT_TITLE}`,
+						"aria-label": `Add to Calendar — ${EVENT_TITLE}, 2026 സെപ്റ്റംബർ 6`,
 						className: `${BTN} bg-berry text-berry-foreground`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg",
@@ -1365,7 +1394,7 @@ function EventActions() {
 						href: MAPS_URL$1,
 						target: "_blank",
 						rel: "noopener noreferrer",
-						"aria-label": `Navigate — Open ${EVENT_LOCATION} in Google Maps (opens in a new tab)`,
+						"aria-label": `വഴികാട്ടി — ${EVENT_LOCATION} ഗൂഗിൾ മാപ്പിൽ തുറക്കും (പുതിയ ടാബിൽ)`,
 						className: `${BTN} bg-sky text-accent-foreground`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navigation, {
 							className: "h-5 w-5 shrink-0",
@@ -1375,8 +1404,8 @@ function EventActions() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						type: "button",
 						onClick: handleShare,
-						"aria-expanded": canNativeShare ? void 0 : shareOpen,
-						"aria-label": `Share — ${EVENT_TITLE}`,
+						"aria-expanded": canNativeShare ? void 0 : showFallback,
+						"aria-label": `പങ്കിടുക — ${EVENT_TITLE}`,
 						className: `${BTN} bg-ink text-cream`,
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Share2, {
 							className: "h-5 w-5 shrink-0",
@@ -1385,20 +1414,10 @@ function EventActions() {
 					})
 				]
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog, {
-				open: shareOpen,
-				onOpenChange: setShareOpen,
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
-					className: "max-w-xs rounded-[1.75rem] bg-cream text-ink ring-poster sm:max-w-sm",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, {
-						className: "font-display text-xl font-bold leading-[1.5]",
-						children: "Share Event"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription, {
-						className: "font-body text-sm leading-[1.7] text-ink/70",
-						children: "Select an app to share with your friends"
-					})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShareBar, {})]
-				})
-			}),
+			showFallback ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "mx-auto mt-4 w-full max-w-2xl rounded-[1.75rem] bg-ink/95 p-4 ring-poster",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShareBar, {})
+			}) : null,
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				role: "status",
 				"aria-live": "polite",
@@ -1414,10 +1433,10 @@ function EventActions() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, {
 							className: "font-display text-xl font-bold leading-[1.5]",
-							children: "Event Details"
+							children: "പരിപാടിയുടെ വിശദാംശങ്ങൾ"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription, {
 							className: "font-body text-sm leading-[1.7] text-ink/70",
-							children: "Review before adding to your calendar"
+							children: "കലണ്ടറിൽ ചേർക്കുന്നതിന് മുൻപ് ഒന്ന് പരിശോധിക്കൂ"
 						})] }),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dl", {
 							className: "mt-2 space-y-3",
@@ -1429,7 +1448,7 @@ function EventActions() {
 										"aria-hidden": true
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60",
-										children: "Event"
+										children: "പരിപാടി"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
 										className: "font-body text-base font-bold leading-[1.6]",
 										children: EVENT_TITLE
@@ -1442,7 +1461,7 @@ function EventActions() {
 										"aria-hidden": true
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60",
-										children: "Date"
+										children: "തീയതി"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dd", {
 										className: "font-body text-base font-bold leading-[1.6]",
 										children: [
@@ -1450,7 +1469,7 @@ function EventActions() {
 											" ",
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 												className: "font-ui text-sm font-normal text-ink/60",
-												children: "(All day)"
+												children: "(എല്ലായിടത്തും)"
 											})
 										]
 									})] })]
@@ -1462,7 +1481,7 @@ function EventActions() {
 										"aria-hidden": true
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
 										className: "font-ui text-xs font-semibold uppercase tracking-[0.14em] text-ink/60",
-										children: "Location"
+										children: "സ്ഥലം"
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
 										className: "font-body text-base font-bold leading-[1.6]",
 										children: EVENT_LOCATION
@@ -1476,7 +1495,7 @@ function EventActions() {
 								type: "button",
 								onClick: () => setCalendarOpen(false),
 								className: "inline-flex min-h-11 items-center justify-center rounded-2xl px-5 py-2.5 font-display text-sm font-bold text-ink ring-poster transition hover:bg-ink/5 focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink",
-								children: "Cancel"
+								children: "റദ്ദാക്കുക"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 								type: "button",
 								onClick: handleCalendarConfirm,
@@ -1484,7 +1503,7 @@ function EventActions() {
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Download, {
 									className: "h-4 w-4 shrink-0",
 									"aria-hidden": true
-								}), "Download File"]
+								}), "ഡൗൺലോഡ് ചെയ്യുക"]
 							})]
 						})
 					]
