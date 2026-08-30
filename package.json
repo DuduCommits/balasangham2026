@@ -1,28 +1,18 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "balasangham-sammelanam-2026",
   "private": true,
   "sideEffects": false,
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && cp .output/public/_shell.html .output/public/index.html && cp .output/public/_shell.html .output/public/404.html",
-    "build:dev": "vite build --mode development",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test:e2e": "playwright test"
   },
-  "overrides": {
-    "rolldown": "1.2.1"
-  },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.1.15",
-    "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/vite": "^4.2.1",
-    "@tanstack/react-query": "^5.101.1",
-    "@tanstack/react-router": "1.170.18",
-    "@tanstack/react-start": "1.168.32",
-    "@tanstack/router-plugin": "1.168.23",
     "clsx": "^2.1.1",
     "lucide-react": "^0.575.0",
     "react": "^19.2.0",
@@ -34,7 +24,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@lovable.dev/vite-tanstack-config": "^2.15.0",
     "@playwright/test": "1.56.0",
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
@@ -46,7 +35,6 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
-    "nitro": "3.0.260603-beta",
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
