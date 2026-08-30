@@ -47,7 +47,7 @@ export function FinalCta() {
         </a>
       </div>
 
-      <img
+      <img loading="lazy" decoding="async"
         src={heroChildren}
         alt=""
         aria-hidden
