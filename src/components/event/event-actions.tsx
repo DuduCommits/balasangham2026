@@ -23,7 +23,7 @@ const BTN =
 
 export function EventActions() {
   const [canNativeShare, setCanNativeShare] = useState(false);
-  const [showFallback, setShowFallback] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [note, setNote] = useState("");
   const noteTimer = useRef<number | null>(null);
@@ -72,7 +72,7 @@ export function EventActions() {
         }
       }
     }
-    setShowFallback((v) => !v);
+    setShareOpen(true);
   };
 
   return (
@@ -103,7 +103,7 @@ export function EventActions() {
         <button
           type="button"
           onClick={handleShare}
-          aria-expanded={canNativeShare ? undefined : showFallback}
+          aria-expanded={canNativeShare ? undefined : shareOpen}
           aria-label={`പങ്കിടുക — ${EVENT_TITLE}`}
           className={`${BTN} bg-ink text-cream`}
         >
@@ -113,11 +113,19 @@ export function EventActions() {
       </div>
 
 
-      {showFallback ? (
-        <div className="mx-auto mt-4 w-full max-w-2xl rounded-[1.75rem] bg-ink/95 p-4 ring-poster">
+      <Dialog open={shareOpen} onOpenChange={setShareOpen}>
+        <DialogContent className="max-w-xs rounded-[1.75rem] bg-cream text-ink ring-poster sm:max-w-sm">
+          <DialogHeader>
+            <DialogTitle className="font-display text-xl font-bold leading-[1.5]">
+              Share Event
+            </DialogTitle>
+            <DialogDescription className="font-body text-sm leading-[1.7] text-ink/70">
+              Select an app to share with your friends
+            </DialogDescription>
+          </DialogHeader>
           <ShareBar />
-        </div>
-      ) : null}
+        </DialogContent>
+      </Dialog>
 
       <p
         role="status"

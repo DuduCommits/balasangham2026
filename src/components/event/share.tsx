@@ -38,8 +38,7 @@ export function ShareBar() {
       aria: "Share on WhatsApp (opens in a new tab)",
       href: `https://wa.me/?text=${encodedText}%20${encodedUrl}`,
       icon: WhatsAppIcon,
-      color: "bg-[#25D366] text-white",
-      malayalam: false,
+      color: "bg-[#25D366] text-white ring-[#25D366]/30",
     },
     {
       key: "fb",
@@ -47,8 +46,7 @@ export function ShareBar() {
       aria: "Share on Facebook (opens in a new tab)",
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
       icon: Facebook,
-      color: "bg-[#1877F2] text-white",
-      malayalam: false,
+      color: "bg-[#1877F2] text-white ring-[#1877F2]/30",
     },
     {
       key: "x",
@@ -56,8 +54,7 @@ export function ShareBar() {
       aria: "Share on X (opens in a new tab)",
       href: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
       icon: Twitter,
-      color: "bg-[#0f1419] text-white",
-      malayalam: false,
+      color: "bg-[#0f1419] text-white ring-black/20",
     },
   ];
 
@@ -76,77 +73,57 @@ export function ShareBar() {
   };
 
   const btnBase =
-    "flex h-12 w-full min-w-0 items-center justify-center gap-2 rounded-2xl px-3 shadow-md transition duration-200 motion-safe:hover:-translate-y-0.5 hover:brightness-110 active:scale-[0.97] active:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sun";
+    "flex h-14 w-full min-w-0 items-center justify-start gap-3 rounded-2xl px-4 ring-1 transition duration-200 motion-safe:hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
   return (
-    <div className="mt-8">
-      <p className="mb-3 text-center font-ui text-xs font-semibold uppercase tracking-[0.18em] text-cream/60">
-        Share with friends
-      </p>
-      <ul className="mx-auto grid w-full max-w-md grid-cols-2 gap-2.5 sm:max-w-2xl sm:grid-cols-4 sm:gap-3">
-        {links.map((item) => {
-          const Icon = item.icon;
-          return (
-            <li key={item.key} className="min-w-0">
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={item.aria}
-                className={`${btnBase} ${item.color}`}
-              >
-                <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-                <span
-                  className={`truncate text-sm font-semibold leading-[1.6] ${
-                    item.malayalam ? "font-body" : "font-ui"
-                  }`}
-                >
-                  {item.label}
-                </span>
-              </a>
-            </li>
-          );
-        })}
-        <li className="min-w-0">
-          <button
-            type="button"
-            onClick={handleCopy}
-            aria-label={copied ? "Link copied" : "Copy link"}
-            className={`${btnBase} bg-cream text-ink`}
+    <div className="mt-2 flex flex-col gap-2.5">
+      {links.map((item) => {
+        const Icon = item.icon;
+        return (
+          <a
+            key={item.key}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={item.aria}
+            className={`${btnBase} ${item.color}`}
           >
-            {copied ? (
-              <Check className="h-5 w-5 shrink-0" aria-hidden="true" />
-            ) : (
-              <Link2 className="h-5 w-5 shrink-0" aria-hidden="true" />
-            )}
+            <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
             <span className="truncate font-ui text-sm font-semibold leading-[1.6]">
-              {copied ? "Copied" : "Link"}
+              {item.label}
             </span>
-          </button>
-        </li>
-      </ul>
-      <a
-        href={MAPS_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Share the Google Maps location (opens in a new tab)"
-        className={`${btnBase} mx-auto mt-2.5 flex w-full max-w-md gap-2 bg-sky-600 text-white sm:max-w-2xl`}
+          </a>
+        );
+      })}
+      
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={copied ? "Link copied" : "Copy link"}
+        className={`${btnBase} bg-cream text-ink ring-ink/10`}
       >
-        <MapPin className="h-5 w-5 shrink-0" aria-hidden="true" />
-        <span className="truncate font-ui text-sm font-semibold leading-[1.6]">Map</span>
-      </a>
+        {copied ? (
+          <Check className="h-5 w-5 shrink-0 text-leaf" aria-hidden="true" />
+        ) : (
+          <Link2 className="h-5 w-5 shrink-0" aria-hidden="true" />
+        )}
+        <span className="truncate font-ui text-sm font-semibold leading-[1.6]">
+          {copied ? "Copied" : "Copy Link"}
+        </span>
+      </button>
+
       <p
         role="status"
         aria-live="polite"
         aria-atomic="true"
-        className={`mt-2.5 min-h-[1.25rem] text-center font-ui text-xs leading-[1.6] transition-opacity duration-200 ${
+        className={`mt-2 min-h-[1.25rem] text-center font-ui text-xs leading-[1.6] transition-opacity duration-200 ${
           copied || copyFailed ? "opacity-100" : "opacity-0"
-        } ${copyFailed ? "text-[#ffb4a2]" : "text-cream/80"}`}
+        } ${copyFailed ? "text-destructive" : "text-ink/60"}`}
       >
         {copied
-          ? "Link copied — you can paste it anywhere"
+          ? "Link copied to clipboard"
           : copyFailed
-            ? "Couldn't copy — please copy the link manually"
+            ? "Couldn't copy — please copy manually"
             : ""}
       </p>
     </div>
