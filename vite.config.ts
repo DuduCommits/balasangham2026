@@ -29,6 +29,15 @@ export default defineConfig({
           );
           fs.writeFileSync(indexPath, content);
         }
+        
+        // Tell Vercel this function uses Web Streams (Request/Response) instead of Node req/res
+        const vcConfigPath = path.resolve(nitro.options.output.serverDir, ".vc-config.json");
+        fs.writeFileSync(vcConfigPath, JSON.stringify({
+          runtime: "nodejs20.x",
+          handler: "index.mjs",
+          launcherType: "Nodejs",
+          supportsWrapper: false
+        }, null, 2));
       },
     },
   },
