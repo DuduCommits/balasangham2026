@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Instagram, Facebook } from "lucide-react";
 
 import logoMark from "@/assets/balasangham-logo.webp";
 
@@ -187,6 +187,49 @@ export function SiteNav() {
                 സ്വാഗതം
               </a>
             </li>
+            <li className="flex items-center gap-2 pl-2">
+              <a
+                href="https://www.instagram.com/balasangham_pinarayi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid h-10 w-10 place-items-center rounded-full bg-berry text-cream shadow-md transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-berry"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1CA9ncygHb/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid h-10 w-10 place-items-center rounded-full bg-berry text-cream shadow-md transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-berry"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.threads.net/@balasangham_pinarayi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid h-10 w-10 place-items-center rounded-full bg-berry text-cream shadow-md transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-berry"
+                aria-label="Threads"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                  <path d="M14 12V13C14 14.1046 13.1046 15 12 15C10.8954 15 10 14.1046 10 13V11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11V12Z" />
+                  <path d="M10 13C10 14.1046 10.8954 15 12 15H12.5C14.433 15 16 13.433 16 11.5C16 9.567 14.433 8 12.5 8H12C9.23858 8 7 10.2386 7 13C7 15.7614 9.23858 18 12 18H14.5" />
+                </svg>
+              </a>
+            </li>
           </ul>
 
           <button
@@ -248,6 +291,49 @@ export function SiteNav() {
               className="flex min-h-[60px] items-center justify-center rounded-2xl bg-berry px-5 text-center font-display text-xl font-bold leading-snug text-berry-foreground ring-poster focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
               സമ്മേളനത്തിലേക്ക് സ്വാഗതം
+            </a>
+          </li>
+          <li className="pt-4 pb-2 flex justify-center gap-4">
+            <a
+              href="https://www.instagram.com/balasangham_pinarayi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid h-12 w-12 place-items-center rounded-full bg-berry text-cream shadow-md transition-transform active:scale-95"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-6 w-6" />
+            </a>
+            <a
+              href="https://www.facebook.com/share/1CA9ncygHb/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid h-12 w-12 place-items-center rounded-full bg-berry text-cream shadow-md transition-transform active:scale-95"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-6 w-6" />
+            </a>
+            <a
+              href="https://www.threads.net/@balasangham_pinarayi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid h-12 w-12 place-items-center rounded-full bg-berry text-cream shadow-md transition-transform active:scale-95"
+              aria-label="Threads"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                <path d="M14 12V13C14 14.1046 13.1046 15 12 15C10.8954 15 10 14.1046 10 13V11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11V12Z" />
+                <path d="M10 13C10 14.1046 10.8954 15 12 15H12.5C14.433 15 16 13.433 16 11.5C16 9.567 14.433 8 12.5 8H12C9.23858 8 7 10.2386 7 13C7 15.7614 9.23858 18 12 18H14.5" />
+              </svg>
             </a>
           </li>
           <li className="pt-4 text-center font-ui text-sm text-ink/60">
