@@ -1,0 +1,352 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — ബാലസംഘം പിണറായി ഏരിയ സമ്മേളനം
+ * Festival palette inspired by the event posters: golden yellow base with
+ * red, deep purple, blue, orange and green accents. All colors in oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Festival tokens */
+  --color-festival: var(--festival);
+  --color-festival-deep: var(--festival-deep);
+  --color-sun: var(--sun);
+  --color-mango: var(--mango);
+  --color-berry: var(--berry);
+  --color-berry-foreground: var(--berry-foreground);
+  --color-grape: var(--grape);
+  --color-sky: var(--sky);
+  --color-leaf: var(--leaf);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+
+  --font-display: "Baloo Chettan 2", "Noto Sans Malayalam", system-ui, sans-serif;
+  --font-body: "Noto Sans Malayalam", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-ui: "Plus Jakarta Sans", "Noto Sans Malayalam", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+
+  --festival: oklch(0.87 0.16 88);
+  --festival-deep: oklch(0.79 0.18 74);
+  --sun: oklch(0.93 0.12 96);
+  --mango: oklch(0.72 0.19 55);
+  --berry: oklch(0.53 0.22 27);
+  --berry-foreground: oklch(0.98 0.01 90);
+  --grape: oklch(0.4 0.19 320);
+  --sky: oklch(0.6 0.17 245);
+  --leaf: oklch(0.58 0.14 148);
+  --cream: oklch(0.98 0.02 92);
+  --ink: oklch(0.22 0.04 40);
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--berry);
+  --primary-foreground: var(--berry-foreground);
+  --secondary: var(--sun);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.95 0.02 88);
+  --muted-foreground: oklch(0.47 0.04 50);
+  --accent: var(--grape);
+  --accent-foreground: oklch(0.98 0.01 90);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.9 0.04 85);
+  --input: oklch(0.9 0.04 85);
+  --ring: var(--mango);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  section[tabindex="-1"]:focus {
+    outline: none;
+  }
+
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(8deg);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@utility float-slow {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+@utility float-fast {
+  animation: float-y 4.5s ease-in-out infinite;
+}
+
+@utility sway-slow {
+  animation: sway 5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@utility spin-slow {
+  animation: spin-slow 26s linear infinite;
+}
+
+@utility rise-in {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility pop-in {
+  animation: pop-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scroll reveal */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@utility text-outline-ink {
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+}
+
+/* ─── Poster-inspired surface & typography utilities ─────────────────── */
+
+@utility font-ui {
+  font-family: var(--font-ui);
+  font-feature-settings: "tnum" 1;
+}
+
+/* Malayalam display type: generous line-height so no glyph is clipped */
+@utility type-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.28;
+  letter-spacing: -0.005em;
+  padding-block: 0.04em;
+}
+
+@utility type-display-tight {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.34;
+  letter-spacing: -0.005em;
+  padding-block: 0.1em;
+}
+
+/* Extremely subtle paper grain */
+@utility grain {
+  position: relative;
+}
+@utility grain-layer {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  opacity: 0.05;
+}
+
+@utility dotgrid {
+  background-image: radial-gradient(currentColor 1.4px, transparent 1.4px);
+  background-size: 16px 16px;
+}
+
+@utility text-poster-shadow {
+  text-shadow: 0.055em 0.055em 0 color-mix(in oklab, var(--ink) 22%, transparent);
+}
+
+@utility text-sticker {
+  -webkit-text-stroke: 0.028em var(--cream);
+  paint-order: stroke fill;
+}
+
+@utility ring-poster {
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--ink) 8%, transparent),
+    0 18px 40px -22px color-mix(in oklab, var(--ink) 45%, transparent);
+}
+
+@keyframes drift-x {
+  0%,
+  100% {
+    transform: translateX(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateX(16px) rotate(3deg);
+  }
+}
+
+@keyframes tick-up {
+  0% {
+    opacity: 0;
+    transform: translateY(38%) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes underline-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@utility drift-slow {
+  animation: drift-x 11s ease-in-out infinite;
+}
+
+@utility tick-up {
+  animation: tick-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility reveal-left {
+  opacity: 0;
+  transform: translateX(-34px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility reveal-right {
+  opacity: 0;
+  transform: translateX(34px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
