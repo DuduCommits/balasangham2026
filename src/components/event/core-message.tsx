@@ -1,14 +1,44 @@
+import { Users, Heart, Palette, BookOpen, MessageCircle } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { useScrollOffset } from "@/hooks/use-parallax";
 import { Wings, PaperPlane, Star, Grain, CurveDivider } from "./decor";
 
-const PILLARS = [
-  { title: "സൗഹൃദം", text: "കൈകോർത്ത് വളരുന്ന കൂട്ടുകാർ" },
-  { title: "സമത്വം", text: "എല്ലാ കുട്ടികൾക്കും ഒരേ ഇടം" },
-  { title: "സമാധാനം", text: "സ്നേഹത്തിന്റെ ഭാഷ മാത്രം" },
-  { title: "സർഗാത്മകത", text: "പാട്ടും ചിത്രവും കഥയും" },
-  { title: "പഠനം", text: "അറിവിന്റെ പുതിയ വഴികൾ" },
-  { title: "സ്വപ്നങ്ങൾ", text: "ചിറകുവിരിക്കുന്ന നാളെ" },
+const THEMES = [
+  {
+    icon: Users,
+    title: "സംഘാടനം",
+    text: "കുട്ടികൾ ഒരുമിച്ച് പങ്കെടുക്കുന്ന കൂട്ടായ്മ",
+    surface: "bg-berry text-berry-foreground",
+    tilt: "-1.4deg",
+  },
+  {
+    icon: Heart,
+    title: "സൗഹൃദം",
+    text: "കൈകോർത്ത് വളരുന്ന കൂട്ടുകാർ",
+    surface: "bg-grape text-accent-foreground",
+    tilt: "1.2deg",
+  },
+  {
+    icon: Palette,
+    title: "സർഗാത്മകത",
+    text: "പാട്ടും ചിത്രവും കഥയും",
+    surface: "bg-sky text-accent-foreground",
+    tilt: "-0.8deg",
+  },
+  {
+    icon: BookOpen,
+    title: "പഠനം",
+    text: "അറിവിന്റെ പുതിയ വഴികൾ",
+    surface: "bg-leaf text-accent-foreground",
+    tilt: "1.6deg",
+  },
+  {
+    icon: MessageCircle,
+    title: "സന്ദേശം",
+    text: "സമാധാനവും സ്നേഹവും",
+    surface: "bg-mango text-ink",
+    tilt: "-1deg",
+  },
 ];
 
 export function CoreMessage() {
@@ -17,6 +47,7 @@ export function CoreMessage() {
 
   return (
     <section
+      id="aashayam"
       className="relative overflow-hidden py-16 sm:py-28"
       style={{
         backgroundImage:
@@ -44,14 +75,25 @@ export function CoreMessage() {
           </span>
         </h2>
 
-        <ul className="mt-16 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
-          {PILLARS.map((p) => (
+        <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {THEMES.map(({ icon: Icon, ...t }) => (
             <li
-              key={p.title}
-              className="group border-l-[5px] border-berry/60 pl-5 transition-all duration-300 hover:border-grape hover:pl-6"
+              key={t.title}
+              className={`${t.surface} group relative overflow-hidden rounded-[1.75rem] p-7 ring-poster transition-all duration-300 hover:rotate-0 hover:-translate-y-2`}
+              style={{ transform: `rotate(${t.tilt})` }}
             >
-              <h3 className="type-display text-2xl text-berry sm:text-[1.7rem]">{p.title}</h3>
-              <p className="mt-1 text-lg leading-relaxed text-ink/75">{p.text}</p>
+              <span aria-hidden className="dotgrid absolute inset-0 opacity-10" />
+              <span
+                aria-hidden
+                className="absolute -right-8 -top-8 block h-28 w-28 rounded-full bg-cream/15 transition-transform duration-500 group-hover:scale-125"
+              />
+              <div className="relative">
+                <span className="mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-cream/20 backdrop-blur-sm">
+                  <Icon className="h-6 w-6" aria-hidden />
+                </span>
+                <h3 className="type-display text-2xl sm:text-[1.6rem]">{t.title}</h3>
+                <p className="mt-2 text-base leading-relaxed opacity-85">{t.text}</p>
+              </div>
             </li>
           ))}
         </ul>

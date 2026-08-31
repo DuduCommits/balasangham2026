@@ -10,8 +10,7 @@ export function Game() {
       id="game"
       className="relative overflow-hidden py-16 sm:py-24"
       style={{
-        backgroundImage:
-          "linear-gradient(180deg, var(--cream) 0%, var(--mango) 100%)",
+        backgroundImage: "linear-gradient(180deg, var(--cream) 0%, var(--mango) 100%)",
       }}
     >
       <Grain />
@@ -43,7 +42,7 @@ export function Game() {
           </a>
         </div>
       </div>
-      
+
       <CurveDivider color="var(--sun)" />
     </section>
   );

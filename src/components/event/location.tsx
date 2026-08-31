@@ -1,4 +1,4 @@
-import { MapPin, CalendarDays, Navigation } from "lucide-react";
+import { MapPin, CalendarDays, Navigation, Clock } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Grain, Star, DotRow } from "./decor";
 
@@ -32,7 +32,7 @@ export function Location() {
             കോട്ടയം അങ്ങാടി, കണ്ണൂർ
           </h2>
           <p className="mt-4 max-w-md text-lg leading-[1.9] text-ink/80">
-            സമ്മേളന വേദി കണ്ണൂർ കോട്ടയം അങ്ങാടിയിലാണ്. കൂടുതൽ വിശദാംശങ്ങൾ പിന്നീട് അറിയിക്കും.
+            സമ്മേളന വേദി കണ്ണൂർ കോട്ടയം അങ്ങാടിയിലാണ്.
           </p>
 
           <dl className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -45,10 +45,17 @@ export function Location() {
             </div>
             <div className="rounded-2xl bg-sun/70 p-4">
               <dt className="flex items-center gap-2 font-ui text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ink/55">
+                <Clock className="h-4 w-4 text-grape" aria-hidden />
+                Time
+              </dt>
+              <dd className="type-display mt-1 text-[1.1rem] leading-tight text-ink">രജിസ്ട്രേഷൻ രാവിലെ 9.00 മണിക്ക്</dd>
+            </div>
+            <div className="rounded-2xl bg-sun/70 p-4 sm:col-span-2">
+              <dt className="flex items-center gap-2 font-ui text-[0.7rem] font-bold uppercase tracking-[0.2em] text-ink/55">
                 <MapPin className="h-4 w-4 text-sky" aria-hidden />
                 Venue
               </dt>
-              <dd className="type-display mt-1 text-xl text-ink">കോട്ടയം അങ്ങാടി, കണ്ണൂർ</dd>
+              <dd className="type-display mt-1 text-[1.15rem] text-ink">കോട്ടയം അങ്ങാടി, കണ്ണൂർ</dd>
             </div>
           </dl>
 

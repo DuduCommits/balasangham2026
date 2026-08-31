@@ -2,20 +2,14 @@ import introChildren from "@/assets/intro-children.webp";
 import { useReveal } from "@/hooks/use-reveal";
 import { usePointerTilt } from "@/hooks/use-parallax";
 import { Star, Spiral, Flower, Grain, DotRow } from "./decor";
-
-const FRAGMENTS = [
-  { text: "സൗഹൃദം", className: "-left-2 top-6 -rotate-6 text-berry" },
-  { text: "ഒരുമ", className: "right-0 top-16 rotate-6 text-grape" },
-  { text: "സർഗാത്മകത", className: "left-2 bottom-10 -rotate-3 text-sky" },
-  { text: "സ്വപ്നങ്ങൾ", className: "right-2 bottom-24 rotate-3 text-leaf" },
-];
+import balasanghamOfficialFlag from "@/assets/balasangham-official-flag.png";
 
 export function Intro() {
   const reveal = useReveal<HTMLDivElement>();
   const tilt = usePointerTilt();
 
   return (
-    <section id="aamukham" className="relative overflow-hidden bg-cream py-16 sm:py-24">
+    <section id="aamukham" className="relative overflow-hidden bg-cream py-16 pb-28 sm:py-24 sm:pb-32">
       <Grain />
       <span
         aria-hidden
@@ -30,25 +24,29 @@ export function Intro() {
         <div className="relative">
           <DotRow />
           <h2 className="mt-4">
-            <span className="type-display-tight block text-[clamp(2.4rem,9vw,4.6rem)] text-berry text-poster-shadow">
-              സ്നേഹപൂർവ്വം
-            </span>
-            <span className="type-display-tight block text-[clamp(2.4rem,9vw,4.6rem)] text-grape lg:ml-[0.4em]">
+            <span className="type-display-tight block text-[clamp(2.6rem,10vw,5.2rem)] text-berry text-poster-shadow">
               സ്വാഗതം
             </span>
           </h2>
           <span aria-hidden className="mt-4 block h-2.5 w-32 rounded-full bg-mango" />
 
-          <div className="mt-7 max-w-xl space-y-5 text-lg leading-[1.95] text-ink/80 sm:text-xl">
+          <div className="mt-7 max-w-xl space-y-5 text-lg leading-[1.95] text-ink/80 sm:text-[1.15rem]">
             <p className="border-l-4 border-berry/50 pl-5 font-medium text-ink">
-              ബാലസംഘം പിണറായി ഏരിയ സമ്മേളനം കുട്ടികളുടെ സൗഹൃദവും സർഗാത്മകതയും ഒരുമയും ആഘോഷിക്കുന്ന
-              ഒരു സംഗമമാണ്.
+              കുട്ടികളുടെ സൗഹൃദവും സർഗാത്മകതയും ഒരുമയും ആഘോഷിക്കുന്ന വേദി
             </p>
             <p>
-              പാട്ടും കളിയും കലയും ചിരിയും നിറഞ്ഞ ഒരു ദിവസം. ഓരോ കുട്ടിയുടെയും സ്വപ്നങ്ങൾക്ക് ഇടം
-              നൽകുന്ന വേദി.
+              പാട്ടും കളിയും കലയും ചിരിയും നിറഞ്ഞൊരു മനോഹര ദിനം. ഓരോ കുട്ടിയുടെയും സ്വപ്നങ്ങൾക്കും ചിന്തകൾക്കും സർഗാത്മകതയ്ക്കും ഇടം നൽകുന്ന, സൗഹൃദത്തിന്റെയും കൂട്ടായ്മയുടെയും ആഘോഷമാണ് ബാലസംഘം പിണറായി ഏരിയ സമ്മേളനം.
             </p>
-            <p>നാടിന്റെ നാളെയെ സ്വപ്നം കാണുന്ന കൂട്ടുകാർക്കൊപ്പം നിങ്ങളും ചേരൂ.</p>
+            <p>
+              നാടിന്റെ നാളെയെ സ്വപ്നം കാണുന്ന കൂട്ടുകാർ ഒരുമിക്കുന്ന ഈ വേദിയിൽ, പുതിയ ആശയങ്ങളും പുതിയ സൗഹൃദങ്ങളും പുതിയ സ്വപ്നങ്ങളും പിറക്കട്ടെ.
+            </p>
+            <p className="font-medium text-berry">
+              നമുക്കൊരുമിച്ച് സ്വപ്നം കാണാം…
+              <br />
+              നമുക്കൊരുമിച്ച് മുന്നേറാം…
+              <br />
+              നാടിന്റെ നാളെയെ സ്വപ്നം കാണുന്ന കൂട്ടുകാർക്കൊപ്പം നിങ്ങളും ചേരൂ..
+            </p>
           </div>
         </div>
 
@@ -66,15 +64,18 @@ export function Intro() {
           <Flower className="float-fast absolute right-6 top-2 h-8 w-8 text-berry/70" />
           <Star className="float-slow absolute left-8 top-0 h-7 w-7 text-mango" />
 
-          {FRAGMENTS.map((f) => (
-            <span
-              key={f.text}
-              aria-hidden
-              className={`absolute z-10 rounded-full bg-cream/90 px-3.5 py-1.5 font-display text-sm font-bold shadow-sm backdrop-blur-sm sm:text-base ${f.className}`}
-            >
-              {f.text}
-            </span>
-          ))}
+          <div className="absolute -bottom-6 left-1/2 z-10 w-[95%] -translate-x-1/2 rounded-2xl border-2 border-dashed border-berry/30 bg-cream/90 p-4 text-center shadow-lg backdrop-blur-md sm:-bottom-10 sm:w-[85%]">
+            <p className="font-ui text-[0.65rem] font-bold uppercase tracking-widest text-berry">
+              മുദ്രാവാക്യം
+            </p>
+            <p className="mt-1.5 font-display text-sm font-bold italic leading-relaxed text-ink/90 sm:text-base">
+              പഠിച്ചു ഞങ്ങൾ നല്ലവരാകും,<br />
+              ജയിച്ചു ഞങ്ങൾ മുന്നേറും,<br />
+              പടുത്തുയർത്തും ഭാരത മണ്ണിൽ,<br />
+              സമത്വ സുന്ദരനവലോകം.
+            </p>
+            <img src={balasanghamOfficialFlag} alt="" aria-hidden className="mx-auto mt-4 h-24 w-auto drop-shadow-md object-contain" />
+          </div>
 
           <img
             src={introChildren}

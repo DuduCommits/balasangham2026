@@ -1,4 +1,4 @@
-import { Flag, Palette, Music, HeartHandshake, Sparkles } from "lucide-react";
+import { Flag, Palette, Music } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Grain, Star, CurveDivider, DotRow } from "./decor";
 
@@ -6,32 +6,20 @@ const PROGRAMS = [
   {
     icon: Flag,
     title: "ഉദ്ഘാടന സമ്മേളനം",
-    text: "സമ്മേളനത്തിന് തുടക്കമിടുന്ന ആഹ്ലാദ നിമിഷം",
+    text: "സമ്മേളനം ബാലസംഘം സംസ്ഥാന പ്രസിഡന്റ് പ്രവിഷ പ്രമോദ് ഉദ്ഘാടനം ചെയ്യും.",
     tint: "bg-berry text-berry-foreground",
   },
   {
     icon: Palette,
-    title: "കലാപരിപാടികൾ",
-    text: "ചിത്രവും നൃത്തവും അഭിനയവും",
+    title: "അനുബന്ധ പരിപാടികൾ",
+    text: "ലോഗോ പ്രകാശനം, പട്ടം പറത്തൽ, തലമുറ സംഗമം, വടംവലി, കാരംസ് ടൂർണമെന്റ്, ഓൺലൈൻ ഗെയിംസ്, പ്രചരണ ക്യാമ്പയിൻ.",
     tint: "bg-grape text-accent-foreground",
   },
   {
     icon: Music,
     title: "സാംസ്കാരിക പരിപാടികൾ",
-    text: "നാടിന്റെ പാട്ടും താളവും",
+    text: "സ്നേഹത്തിന്റെയും സൗഹൃദത്തിന്റെയും സമത്വത്തിന്റെയും നിറവിൽ ഓണാഘോഷ പരിപാടികൾ.",
     tint: "bg-sky text-accent-foreground",
-  },
-  {
-    icon: HeartHandshake,
-    title: "സൗഹൃദ സംഗമം",
-    text: "പുതിയ കൂട്ടുകാരെ കാണാൻ ഒരു ഇടം",
-    tint: "bg-leaf text-accent-foreground",
-  },
-  {
-    icon: Sparkles,
-    title: "സർഗാത്മക പ്രകടനങ്ങൾ",
-    text: "ഓരോ കുട്ടിയുടെയും കഴിവിന് വേദി",
-    tint: "bg-mango text-ink",
   },
 ];
 
@@ -40,7 +28,7 @@ export function Programs() {
 
   return (
     <section
-      id="paripadikal"
+      id="visheshangal"
       className="relative overflow-hidden py-16 sm:py-24"
       style={{
         backgroundImage:
@@ -60,14 +48,14 @@ export function Programs() {
         <div className="flex flex-col items-center text-center">
           <DotRow />
           <h2 className="type-display mt-3 text-[clamp(2rem,7.5vw,3.8rem)] text-berry text-poster-shadow">
-            സമ്മേളന വിശേഷങ്ങൾ
+            വിശേഷണങ്ങൾ
           </h2>
           <p className="mt-3 max-w-xl text-lg leading-relaxed text-ink/75">
             സമ്മേളന ദിവസത്തെ പ്രധാന ആകർഷണങ്ങൾ
           </p>
         </div>
 
-        <ol className="relative mt-16">
+        <ol id="paripadikal" className="relative mt-16">
           {/* curved timeline spine */}
           <span
             aria-hidden

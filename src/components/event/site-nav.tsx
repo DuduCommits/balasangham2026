@@ -4,11 +4,11 @@ import { Menu, X, ArrowRight, Instagram, Facebook } from "lucide-react";
 import logoMark from "@/assets/balasangham-logo.webp";
 
 const LINKS = [
-  { href: "#aamukham", label: "ആമുഖം" },
-  { href: "#sammelanam", label: "സമ്മേളനം" },
+  { href: "#aamukham", label: "സ്വാഗതം" },
+  { href: "#aashayam", label: "ആശയം" },
+  { href: "#visheshangal", label: "വിശേഷണങ്ങൾ" },
   { href: "#paripadikal", label: "പരിപാടികൾ" },
-  { href: "#game", label: "കളികൾ" },
-  { href: "#ormakal", label: "ഓർമ്മകൾ" },
+  { href: "#ormakal", label: "ഗാലറി" },
   { href: "#sthalam", label: "സ്ഥലം" },
 ];
 
@@ -142,7 +142,9 @@ export function SiteNav() {
             className="group flex min-w-0 items-center gap-2.5 rounded-2xl py-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-berry"
           >
             <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full bg-cream shadow-sm transition-transform duration-300 group-hover:-rotate-6">
-              <img loading="lazy" decoding="async"
+              <img
+                loading="lazy"
+                decoding="async"
                 src={logoMark}
                 alt=""
                 aria-hidden

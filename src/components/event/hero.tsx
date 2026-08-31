@@ -56,21 +56,23 @@ export function Hero() {
       <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 px-5 pt-16 sm:px-6 sm:pt-20 lg:grid lg:items-center lg:gap-6 lg:pt-24 lg:grid-cols-[1.08fr_0.92fr]">
         {/* Layer 4 — typography */}
         <div className="relative z-20 text-center lg:text-left">
-          <img
-            src={logoMark}
-            alt="ബാലസംഘം ചിഹ്നം — സമാധാനത്തിന്റെ പ്രാവും കുട്ടികളും"
-            width={320}
-            height={320}
-            decoding="async"
-            className="pop-in mx-auto block h-20 w-20 object-contain drop-shadow-[0_10px_18px_rgba(60,30,0,0.18)] sm:h-24 sm:w-24 lg:mx-0"
-          />
-          <p
-            className="rise-in mt-4 inline-flex items-center gap-3 rounded-full border border-ink/10 bg-cream/70 px-5 py-1.5 font-ui text-xs font-semibold uppercase tracking-[0.18em] text-ink/70 backdrop-blur-sm sm:text-sm"
-            style={{ animationDelay: "0.05s" }}
-          >
-            <DotRow />
-            2026
-          </p>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            <img
+              src={logoMark}
+              alt="ബാലസംഘം ചിഹ്നം — സമാധാനത്തിന്റെ പ്രാവും കുട്ടികളും"
+              width={320}
+              height={320}
+              decoding="async"
+              className="pop-in block h-20 w-20 object-contain drop-shadow-[0_10px_18px_rgba(60,30,0,0.18)] sm:h-24 sm:w-24"
+            />
+            <p
+              className="rise-in inline-flex items-center gap-3 rounded-full border border-ink/10 bg-cream/70 px-5 py-1.5 font-ui text-xs font-semibold uppercase tracking-[0.18em] text-ink/70 backdrop-blur-sm sm:text-sm"
+              style={{ animationDelay: "0.05s" }}
+            >
+              <DotRow />
+              2026
+            </p>
+          </div>
 
           <h1 className="mt-5 sm:mt-6">
             <span className="sr-only">ബാലസംഘം പിണറായി ഏരിയ സമ്മേളനം</span>

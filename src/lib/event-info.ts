@@ -2,7 +2,7 @@ export const EVENT_TITLE = "ബാലസംഘം പിണറായി ഏര�
 export const EVENT_DATE_ML = "2026 സെപ്റ്റംബർ 6";
 export const EVENT_LOCATION = "കോട്ടയം അങ്ങാടി, കണ്ണൂർ";
 export const EVENT_DESCRIPTION = `${EVENT_TITLE} — ${EVENT_DATE_ML}.`;
-export const EVENT_SHARE_TEXT = `${EVENT_TITLE} — ${EVENT_DATE_ML}, ${EVENT_LOCATION}.`;
+export const EVENT_SHARE_TEXT = `${EVENT_TITLE}\n\n📅 ${EVENT_DATE_ML}\n📍 ${EVENT_LOCATION}\n\nകുട്ടികളുടെ സൗഹൃദവും സർഗാത്മകതയും ഒരുമയും ആഘോഷിക്കുന്ന സംഗമം. പാട്ടും കളിയും കലയും നിറഞ്ഞ ഒരു ദിവസം!`;
 export const MAPS_URL = "https://maps.app.goo.gl/rUMkccbTZhMd46Kx5?g_st=aw";
 
 /** All-day event: 2026-09-06 (DTEND is exclusive). */
