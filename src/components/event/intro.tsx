@@ -9,7 +9,7 @@ export function Intro() {
   const tilt = usePointerTilt();
 
   return (
-    <section id="aamukham" className="relative overflow-hidden bg-cream py-16 pb-28 sm:py-24 sm:pb-32">
+    <section id="aamukham" className="relative overflow-hidden bg-cream py-16 sm:py-24">
       <Grain />
       <span
         aria-hidden
@@ -48,6 +48,19 @@ export function Intro() {
               നാടിന്റെ നാളെയെ സ്വപ്നം കാണുന്ന കൂട്ടുകാർക്കൊപ്പം നിങ്ങളും ചേരൂ..
             </p>
           </div>
+
+          <div className="mt-12 max-w-xl rounded-2xl border-2 border-dashed border-berry/30 bg-white/50 p-6 text-center shadow-sm backdrop-blur-md sm:p-8">
+            <p className="font-ui text-xs font-bold uppercase tracking-widest text-berry sm:text-sm">
+              മുദ്രാവാക്യം
+            </p>
+            <p className="mt-3 font-display text-lg font-bold italic leading-relaxed text-ink/90 sm:text-xl">
+              പഠിച്ചു ഞങ്ങൾ നല്ലവരാകും,<br />
+              ജയിച്ചു ഞങ്ങൾ മുന്നേറും,<br />
+              പടുത്തുയർത്തും ഭാരത മണ്ണിൽ,<br />
+              സമത്വ സുന്ദരനവലോകം.
+            </p>
+            <img src={balasanghamOfficialFlag} alt="" aria-hidden className="mx-auto mt-6 h-28 w-auto drop-shadow-md object-contain sm:h-32" />
+          </div>
         </div>
 
         <div className="relative">
@@ -63,19 +76,6 @@ export function Intro() {
           <Spiral className="float-slow absolute -left-3 bottom-8 h-14 w-14 text-grape/50" />
           <Flower className="float-fast absolute right-6 top-2 h-8 w-8 text-berry/70" />
           <Star className="float-slow absolute left-8 top-0 h-7 w-7 text-mango" />
-
-          <div className="absolute -bottom-6 left-1/2 z-10 w-[95%] -translate-x-1/2 rounded-2xl border-2 border-dashed border-berry/30 bg-cream/90 p-4 text-center shadow-lg backdrop-blur-md sm:-bottom-10 sm:w-[85%]">
-            <p className="font-ui text-[0.65rem] font-bold uppercase tracking-widest text-berry">
-              മുദ്രാവാക്യം
-            </p>
-            <p className="mt-1.5 font-display text-sm font-bold italic leading-relaxed text-ink/90 sm:text-base">
-              പഠിച്ചു ഞങ്ങൾ നല്ലവരാകും,<br />
-              ജയിച്ചു ഞങ്ങൾ മുന്നേറും,<br />
-              പടുത്തുയർത്തും ഭാരത മണ്ണിൽ,<br />
-              സമത്വ സുന്ദരനവലോകം.
-            </p>
-            <img src={balasanghamOfficialFlag} alt="" aria-hidden className="mx-auto mt-4 h-24 w-auto drop-shadow-md object-contain" />
-          </div>
 
           <img
             src={introChildren}
