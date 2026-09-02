@@ -67,7 +67,7 @@ export function Intro() {
           <span
             aria-hidden
             className="absolute left-1/2 top-1/2 -z-10 block h-[86%] w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-[52%_48%_44%_56%] bg-festival"
-            style={{ transform: `translate(-50%,-50%) rotate(${tilt.x * 3}deg)` }}
+            style={{ transform: `rotate(${tilt.x * 3}deg)` }}
           />
           <span
             aria-hidden
