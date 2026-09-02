@@ -1,8 +1,6 @@
 import * as React from "react";
 import { X } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-
 /* ───────────────────────────────────────────────────────────────────────────
  * Native <dialog> replacement for @radix-ui/react-dialog.
  * Same API surface used by event-actions.tsx — no consumer changes needed.
@@ -58,10 +56,7 @@ const DialogContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(
-      "relative grid w-full gap-4 border bg-background p-6 shadow-lg sm:rounded-lg",
-      className,
-    )}
+    className={`relative grid w-full gap-4 border bg-background p-6 shadow-lg sm:rounded-lg ${className ?? ""}`}
     {...props}
   >
     {children}
@@ -74,25 +69,11 @@ const DialogHeader = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)}
+    className={`flex flex-col space-y-1.5 text-center sm:text-left ${className ?? ""}`}
     {...props}
   />
 );
 DialogHeader.displayName = "DialogHeader";
-
-const DialogFooter = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div
-    className={cn(
-      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
-      className,
-    )}
-    {...props}
-  />
-);
-DialogFooter.displayName = "DialogFooter";
 
 const DialogTitle = React.forwardRef<
   HTMLHeadingElement,
@@ -100,7 +81,7 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h2
     ref={ref}
-    className={cn("text-lg font-semibold leading-none tracking-tight", className)}
+    className={`text-lg font-semibold leading-none tracking-tight ${className ?? ""}`}
     {...props}
   />
 ));
@@ -112,7 +93,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={`text-sm text-muted-foreground ${className ?? ""}`}
     {...props}
   />
 ));
@@ -122,7 +103,6 @@ export {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogFooter,
   DialogTitle,
   DialogDescription,
 };

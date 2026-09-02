@@ -87,17 +87,6 @@ export function Confetti({ opacity = 0.7 }: { opacity?: number }) {
   );
 }
 
-/** Soft abstract paper-cut blobs used as background depth. */
-export function Blobs() {
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      <span className="float-slow absolute -left-24 top-10 block h-64 w-64 rounded-full bg-mango/25 blur-[3px]" />
-      <span className="drift-slow absolute right-6 top-32 block h-28 w-28 rounded-[38%_62%_45%_55%] bg-sky/30" />
-      <span className="float-fast absolute bottom-16 left-1/4 block h-16 w-16 rotate-12 rounded-2xl bg-grape/25" />
-      <span className="spin-slow absolute -right-16 bottom-20 block h-48 w-48 rounded-full border-8 border-dashed border-berry/25" />
-    </div>
-  );
-}
 
 /** Hand-drawn style star. */
 export function Star({ className = "" }: { className?: string }) {
@@ -211,4 +200,3 @@ export function DotRow({ className = "" }: { className?: string }) {
   );
 }
 
-export { FESTIVAL_COLORS };

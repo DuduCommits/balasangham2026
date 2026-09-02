@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Check, Facebook, Link2, MapPin, Twitter } from "lucide-react";
 
 import { EVENT_SHARE_TEXT as SHARE_TEXT, MAPS_URL } from "@/lib/event-info";
@@ -11,25 +11,13 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-function useShareUrl() {
-  const [url, setUrl] = useState("");
-  useEffect(() => {
-    try {
-      setUrl(window.location.href);
-    } catch {
-      setUrl("/");
-    }
-  }, []);
-  return url;
-}
-
 export function ShareBar() {
-  const url = useShareUrl();
+  const url = window.location.href;
   const [copied, setCopied] = useState(false);
   const [copyFailed, setCopyFailed] = useState(false);
 
   const encodedText = encodeURIComponent(SHARE_TEXT);
-  const encodedUrl = encodeURIComponent(url || "https://balasangham.pinarayiarea.org");
+  const encodedUrl = encodeURIComponent(url);
 
   const links = [
     {
