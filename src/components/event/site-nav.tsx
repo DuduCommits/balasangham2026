@@ -134,7 +134,7 @@ export function SiteNav() {
       >
         <nav
           aria-label="പ്രധാന നാവിഗേഷൻ"
-          className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2.5 sm:px-6 sm:py-3"
+          className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5 sm:px-6 sm:py-3"
         >
           <a
             href="#top"

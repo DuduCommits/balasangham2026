@@ -53,7 +53,7 @@ export function Hero() {
       <Bunting className="top-16 sm:top-20" />
       <Grain />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 px-5 pt-16 sm:px-6 sm:pt-20 lg:grid lg:items-center lg:gap-6 lg:pt-24 lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-5 pt-16 sm:px-6 sm:pt-20 lg:grid lg:items-center lg:gap-10 lg:pt-24 lg:grid-cols-[0.9fr_1.1fr]">
         {/* Layer 4 — typography */}
         <div className="relative z-20 text-center lg:text-left">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -167,7 +167,7 @@ export function Hero() {
             height={1024}
             fetchPriority="high"
             decoding="async"
-            className="pop-in relative mx-auto block w-full max-w-[34rem] drop-shadow-[0_28px_40px_rgba(60,30,0,0.22)]"
+            className="pop-in relative mx-auto block w-full max-w-[34rem] lg:max-w-[46rem] drop-shadow-[0_28px_40px_rgba(60,30,0,0.22)]"
             style={{
               animationDelay: "0.3s",
               transform: `translate3d(${tilt.x * 8}px, ${scroll * -0.04 + tilt.y * 6}px, 0)`,
